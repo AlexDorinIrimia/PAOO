@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/budget.dir/src/main.cpp.o -o budget  liblib.a
