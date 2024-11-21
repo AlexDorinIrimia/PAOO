@@ -6,7 +6,7 @@ project(${project})
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-set(myfiles src/Transaction.cpp src/Budget.cpp include/Transaction.hpp include/Budget.hpp)
+set(myfiles  src/PersonalBudget.cpp src/Transaction.cpp src/Budget.cpp include/PersonalBudget.hpp include/Transaction.hpp include/Budget.hpp)
 include_directories(src)
 include_directories(include)
 add_library(lib STATIC ${myfiles})

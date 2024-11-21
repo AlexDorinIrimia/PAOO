@@ -166,6 +166,30 @@ src/Budget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/Budget.cpp.s
 .PHONY : src/Budget.cpp.s
 
+src/PersonalBudget.o: src/PersonalBudget.cpp.o
+.PHONY : src/PersonalBudget.o
+
+# target to build an object file
+src/PersonalBudget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/PersonalBudget.cpp.o
+.PHONY : src/PersonalBudget.cpp.o
+
+src/PersonalBudget.i: src/PersonalBudget.cpp.i
+.PHONY : src/PersonalBudget.i
+
+# target to preprocess a source file
+src/PersonalBudget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/PersonalBudget.cpp.i
+.PHONY : src/PersonalBudget.cpp.i
+
+src/PersonalBudget.s: src/PersonalBudget.cpp.s
+.PHONY : src/PersonalBudget.s
+
+# target to generate assembly for a file
+src/PersonalBudget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/src/PersonalBudget.cpp.s
+.PHONY : src/PersonalBudget.cpp.s
+
 src/Transaction.o: src/Transaction.cpp.o
 .PHONY : src/Transaction.o
 
@@ -227,6 +251,9 @@ help:
 	@echo "... src/Budget.o"
 	@echo "... src/Budget.i"
 	@echo "... src/Budget.s"
+	@echo "... src/PersonalBudget.o"
+	@echo "... src/PersonalBudget.i"
+	@echo "... src/PersonalBudget.s"
 	@echo "... src/Transaction.o"
 	@echo "... src/Transaction.i"
 	@echo "... src/Transaction.s"

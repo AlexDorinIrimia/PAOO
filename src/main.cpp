@@ -1,4 +1,5 @@
-#include "Budget.hpp"
+# include "Budget.hpp"
+# include "PersonalBudget.hpp"
 
 int main() {
    
@@ -22,6 +23,15 @@ int main() {
     
     budget.calculateBalance();
     budget.printBudgetDetails();
+
+    PersonalBudget budget3(2000,5000);
+    budget3.addTransaction(transaction1);
+    budget3.addTransaction(transaction2);
+    budget3.addTransaction(transaction3);
+
+    std::cout << "The goal is reached? " << budget3.checkGoal() << std::endl;
+
+    budget3.printPersonalBudgetDetails(); 
 
     return 0;
 }

@@ -1,5 +1,8 @@
-CMakeFiles/budget.dir/src/main.cpp.o: /home/alex/Tema\ PAOO/src/main.cpp \
- /usr/include/stdc-predef.h /home/alex/Tema\ PAOO/include/Budget.hpp \
+CMakeFiles/lib.dir/src/PersonalBudget.cpp.o: \
+ /home/alex/Tema\ PAOO/src/PersonalBudget.cpp /usr/include/stdc-predef.h \
+ /home/alex/Tema\ PAOO/include/PersonalBudget.hpp \
+ /home/alex/Tema\ PAOO/include/PersonalBudget.hpp \
+ /home/alex/Tema\ PAOO/include/Budget.hpp \
  /home/alex/Tema\ PAOO/include/Transaction.hpp /usr/include/c++/13/string \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -156,6 +159,4 @@ CMakeFiles/budget.dir/src/main.cpp.o: /home/alex/Tema\ PAOO/src/main.cpp \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/alex/Tema\ PAOO/include/PersonalBudget.hpp \
- /home/alex/Tema\ PAOO/include/PersonalBudget.hpp \
  /home/alex/Tema\ PAOO/include/Budget.hpp
