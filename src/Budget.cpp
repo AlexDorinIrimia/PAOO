@@ -44,7 +44,7 @@ void Budget::addTransaction(const Transaction& transaction) {
 
 Budget& Budget::operator=(const Budget& other) {
     if (this == &other) return *this;  
-
+    std::cout << "In operator assign!" << std::endl;
     this->income = other.income;
     this->expenses = other.expenses;
     this->balance = other.balance;

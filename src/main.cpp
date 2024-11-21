@@ -9,7 +9,9 @@ int main() {
     Transaction transaction2(50.0, "Expenses", "13.02.2024", "Food");
     Transaction transaction3(200.0, "Income", "14.02.2024", "Salary");
 
-   
+    Budget budget2(2000.0);
+    budget2 = budget;
+
     budget.addTransaction(transaction1);
     budget.addTransaction(transaction2);
     budget.addTransaction(transaction3);  

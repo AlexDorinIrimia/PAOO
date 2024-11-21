@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = "/home/alex/Tema PAOO"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/alex/Tema PAOO"
+CMAKE_BINARY_DIR = "/home/alex/Tema PAOO/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lib.dir/depend.make
@@ -70,9 +70,9 @@ include CMakeFiles/lib.dir/progress.make
 include CMakeFiles/lib.dir/flags.make
 
 CMakeFiles/lib.dir/src/Transaction.cpp.o: CMakeFiles/lib.dir/flags.make
-CMakeFiles/lib.dir/src/Transaction.cpp.o: src/Transaction.cpp
+CMakeFiles/lib.dir/src/Transaction.cpp.o: /home/alex/Tema\ PAOO/src/Transaction.cpp
 CMakeFiles/lib.dir/src/Transaction.cpp.o: CMakeFiles/lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/alex/Tema PAOO/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lib.dir/src/Transaction.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/alex/Tema PAOO/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lib.dir/src/Transaction.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lib.dir/src/Transaction.cpp.o -MF CMakeFiles/lib.dir/src/Transaction.cpp.o.d -o CMakeFiles/lib.dir/src/Transaction.cpp.o -c "/home/alex/Tema PAOO/src/Transaction.cpp"
 
 CMakeFiles/lib.dir/src/Transaction.cpp.i: cmake_force
@@ -84,9 +84,9 @@ CMakeFiles/lib.dir/src/Transaction.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/alex/Tema PAOO/src/Transaction.cpp" -o CMakeFiles/lib.dir/src/Transaction.cpp.s
 
 CMakeFiles/lib.dir/src/Budget.cpp.o: CMakeFiles/lib.dir/flags.make
-CMakeFiles/lib.dir/src/Budget.cpp.o: src/Budget.cpp
+CMakeFiles/lib.dir/src/Budget.cpp.o: /home/alex/Tema\ PAOO/src/Budget.cpp
 CMakeFiles/lib.dir/src/Budget.cpp.o: CMakeFiles/lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/alex/Tema PAOO/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lib.dir/src/Budget.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/alex/Tema PAOO/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lib.dir/src/Budget.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lib.dir/src/Budget.cpp.o -MF CMakeFiles/lib.dir/src/Budget.cpp.o.d -o CMakeFiles/lib.dir/src/Budget.cpp.o -c "/home/alex/Tema PAOO/src/Budget.cpp"
 
 CMakeFiles/lib.dir/src/Budget.cpp.i: cmake_force
@@ -109,7 +109,7 @@ liblib.a: CMakeFiles/lib.dir/src/Transaction.cpp.o
 liblib.a: CMakeFiles/lib.dir/src/Budget.cpp.o
 liblib.a: CMakeFiles/lib.dir/build.make
 liblib.a: CMakeFiles/lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/alex/Tema PAOO/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library liblib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/alex/Tema PAOO/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library liblib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -122,6 +122,6 @@ CMakeFiles/lib.dir/clean:
 .PHONY : CMakeFiles/lib.dir/clean
 
 CMakeFiles/lib.dir/depend:
-	cd "/home/alex/Tema PAOO" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/alex/Tema PAOO" "/home/alex/Tema PAOO" "/home/alex/Tema PAOO" "/home/alex/Tema PAOO" "/home/alex/Tema PAOO/CMakeFiles/lib.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd "/home/alex/Tema PAOO/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/alex/Tema PAOO" "/home/alex/Tema PAOO" "/home/alex/Tema PAOO/build" "/home/alex/Tema PAOO/build" "/home/alex/Tema PAOO/build/CMakeFiles/lib.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/lib.dir/depend
 

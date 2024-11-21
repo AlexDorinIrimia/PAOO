@@ -1,0 +1,4 @@
+/home/alex/Tema PAOO/build/CMakeFiles/lib.dir
+/home/alex/Tema PAOO/build/CMakeFiles/budget.dir
+/home/alex/Tema PAOO/build/CMakeFiles/edit_cache.dir
+/home/alex/Tema PAOO/build/CMakeFiles/rebuild_cache.dir
