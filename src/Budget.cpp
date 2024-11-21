@@ -1,36 +1,57 @@
 #include "Budget.hpp"
 
+#define arrMAX 20
 
 Budget::Budget(double income) {
     std::cout << "In constructorul clasei Budget." << std::endl;
     this->income = income;
-    this->transactionList.reserve(10); 
+    this->transactionList = new Transaction[arrMAX]; 
     this->expenses = 0;
     this->balance = 0;
+    this->transactionCount = 0;
 }
-Budget::Budget(Budget& other){
+Budget::Budget(const Budget& other) {
     std::cout << "In copy constructorul clasei Budget!" << std::endl;
+
     income = other.income;
-    transactionList = other.transactionList;
     expenses = other.expenses;
     balance = other.balance;
+
+    if (other.transactionList != nullptr && other.transactionCount > 0) {
+        transactionList = new Transaction[arrMAX];
+        transactionCount = other.transactionCount;
+        for (int i = 0; i < transactionCount; ++i) {
+            transactionList[i] = other.transactionList[i];
+        }
+    } else {
+        transactionList = nullptr;
+        transactionCount = 0;
+    }
 }
 
-Budget::Budget(Budget &&other){
+
+Budget::Budget(Budget&& other) noexcept {
     std::cout << "In move constructorul clasei Budget!" << std::endl;
+
     income = other.income;
-    transactionList = other.transactionList;
     expenses = other.expenses;
     balance = other.balance;
+    transactionList = other.transactionList;
+    transactionCount = other.transactionCount;
+
+    other.transactionList = nullptr;
+    other.transactionCount = 0;
     other.income = 0.0;
     other.expenses = 0.0;
     other.balance = 0.0;
 }
 
+
+
 double Budget::getIncome() const { return this->income; }
 double Budget::getExpenses() const { return this->expenses; }
 double Budget::getBalance() const { return this->balance; }
-std::vector<Transaction>& Budget::getTransactionList() { return this->transactionList; }
+Transaction* Budget::getTransactionList() { return this->transactionList; }
 
 
 void Budget::setIncome(double value) { this->income = value; }
@@ -39,13 +60,14 @@ void Budget::setBalance(double value) { this->balance = value; }
 
 void Budget::calculateExpenses() {
     double sum = 0;
-    for (auto& i : transactionList) {
-        if (i.getType() == "Expenses") {
-            sum += i.getAmount();
+    int i = 0;
+   for (int i = 0; i < transactionCount; i++) {
+        if (transactionList[i].getType() == "Expenses") {
+            sum += transactionList[i].getAmount();
         }
     }
+    
     this->setExpenses(sum);
-    std::cout << "Total Expenses: " << sum << std::endl;
 }
 
 
@@ -55,31 +77,54 @@ void Budget::calculateBalance() {
 }
 
 void Budget::addTransaction(const Transaction& transaction) {
-    this->transactionList.push_back(transaction);
+    if (transactionCount < arrMAX) {
+        transactionList[transactionCount++] = transaction;
+    } else {
+        std::cout << "Transaction list is full!" << std::endl;
+    }
 }
 
-
 Budget& Budget::operator=(const Budget& other) {
-    if (this == &other) return *this;  
     std::cout << "In operator assign!" << std::endl;
-    this->income = other.income;
-    this->expenses = other.expenses;
-    this->balance = other.balance;
-    this->transactionList = other.transactionList;  
+
+    if (this == &other) return *this;
+
+    delete[] transactionList;
+    transactionList = nullptr;
+
+    income = other.income;
+    expenses = other.expenses;
+    balance = other.balance;
+
+    if (other.transactionList != nullptr && other.transactionCount > 0) {
+        transactionList = new Transaction[arrMAX];
+        transactionCount = other.transactionCount;
+        for (int i = 0; i < transactionCount; ++i) {
+            transactionList[i] = other.transactionList[i];
+        }
+    } else {
+        transactionList = nullptr;
+        transactionCount = 0;
+    }
 
     return *this;
 }
+
 
 void Budget::printBudgetDetails() {
     std::cout << "Budget Details:" << std::endl;
     std::cout << "Income: " << this->income << std::endl;
     std::cout << "Expenses: " << this->expenses << std::endl;
     std::cout << "Balance: " << this->balance << std::endl;
-    for (const auto& transaction : this->transactionList) {
-        transaction.printTransactionDetails();
-    }
+    for(int i = 0; i < transactionCount;i++)
+        transactionList[i].printTransactionDetails();
 }
 
 Budget::~Budget() {
     std::cout << "In destructorul clasei Budget." << std::endl;
+    if (transactionList != nullptr) {
+    delete[] transactionList;
+    }
+    transactionList = nullptr;
+    
 }

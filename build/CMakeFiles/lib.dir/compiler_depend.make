@@ -457,6 +457,7 @@ CMakeFiles/lib.dir/src/Transaction.cpp.o: /home/alex/Tema\ PAOO/src/Transaction.
   /usr/include/c++/13/cstddef \
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/cstring \
   /usr/include/c++/13/cwchar \
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
@@ -495,6 +496,8 @@ CMakeFiles/lib.dir/src/Transaction.cpp.o: /home/alex/Tema\ PAOO/src/Transaction.
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/time.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
@@ -579,6 +582,10 @@ CMakeFiles/lib.dir/src/Transaction.cpp.o: /home/alex/Tema\ PAOO/src/Transaction.
   /usr/lib/linux/uapi/x86/asm/errno.h
 
 
+/usr/include/string.h:
+
+/usr/include/c++/13/cstring:
+
 /home/alex/Tema\ PAOO/src/Transaction.cpp:
 
 /home/alex/Tema\ PAOO/include/PersonalBudget.hpp:
@@ -650,6 +657,8 @@ CMakeFiles/lib.dir/src/Transaction.cpp.o: /home/alex/Tema\ PAOO/src/Transaction.
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/strings.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 

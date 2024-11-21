@@ -10,18 +10,19 @@ private:
     double income;
     double expenses;
     double balance;
-    std::vector<Transaction> transactionList;
+    Transaction* transactionList;
+    int transactionCount;
 
 public:
 
     Budget(double income);
-    Budget(Budget& other);
-    Budget(Budget&& other);
+    Budget(const Budget& other);
+    Budget(Budget&& other) noexcept;
 
     double getIncome() const;
     double getExpenses() const;
     double getBalance() const;
-    std::vector<Transaction>& getTransactionList();
+    Transaction* getTransactionList();
 
     void setIncome(double value);
     void setExpenses(double value);
