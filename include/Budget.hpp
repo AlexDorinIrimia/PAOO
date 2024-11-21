@@ -15,6 +15,8 @@ private:
 public:
 
     Budget(double income);
+    Budget(Budget& other);
+    Budget(Budget&& other);
 
     double getIncome() const;
     double getExpenses() const;

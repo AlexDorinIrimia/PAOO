@@ -8,7 +8,24 @@ Budget::Budget(double income) {
     this->expenses = 0;
     this->balance = 0;
 }
+Budget::Budget(Budget& other){
+    std::cout << "In copy constructorul clasei Budget!" << std::endl;
+    income = other.income;
+    transactionList = other.transactionList;
+    expenses = other.expenses;
+    balance = other.balance;
+}
 
+Budget::Budget(Budget &&other){
+    std::cout << "In move constructorul clasei Budget!" << std::endl;
+    income = other.income;
+    transactionList = other.transactionList;
+    expenses = other.expenses;
+    balance = other.balance;
+    other.income = 0.0;
+    other.expenses = 0.0;
+    other.balance = 0.0;
+}
 
 double Budget::getIncome() const { return this->income; }
 double Budget::getExpenses() const { return this->expenses; }
