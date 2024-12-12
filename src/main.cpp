@@ -1,13 +1,16 @@
 # include "Budget.hpp"
 # include "PersonalBudget.hpp"
 # include <memory>
+# include <thread>
+# include <functional>
 
 
 int main() {
 
     std::cout << "Tema 3: "<< std::endl;
     std::unique_ptr<Budget> budget6 = std::make_unique<Budget>(10000.0);
-    //std::unique_ptr<Budget> budget7 = budget6;
+    Budget budget7(2000.0);
+    //std::unique_ptr<Budget> budget8 = std::make_unique<Budget>(budget6);
 
     std::shared_ptr<Transaction> transaction = std::make_shared<Transaction>(200.0,"Expenses","21.11.2024","Vacation");
     auto sharedTransaction = transaction; 
@@ -19,6 +22,17 @@ int main() {
     budget6->calculateExpenses();
     budget6->calculateBalance();
     budget6->printBudgetDetails();
+
+    std::thread thread1(&Budget::addTransaction,&budget7,sharedTransaction);
+    std::thread thread2(&Budget::addTransaction,&budget7,transaction); 
+
+    thread1.join();
+    thread2.join();
+
+    budget7.calculateExpenses();
+    budget7.calculateBalance();
+    budget7.printBudgetDetails();
+    
 
     /*std::cout << "Budget1: "<< std::endl;
     Budget budget(1000.0);

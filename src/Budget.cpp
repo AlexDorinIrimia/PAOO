@@ -59,10 +59,14 @@ std::shared_ptr<Transaction>* Budget::getTransactionList() { return this->transa
 void Budget::setIncome(double value) { this->income = value; }
 void Budget::setExpenses(double value) { 
     std::lock_guard<std::mutex> lock(mutex);
-    expenses = value; }
+    expenses = value; 
+    //std::lock_guard<std::mutex> unlock(mutex);
+    }
 void Budget::setBalance(double value) {
     std::lock_guard<std::mutex> lock(mutex);
-    balance = value; }
+    balance = value; 
+    //std::lock_guard<std::mutex> unlock(mutex);
+    }
 
 void Budget::calculateExpenses() {
     double sum = 0;
@@ -95,6 +99,7 @@ void Budget::addTransaction(const std::shared_ptr<Transaction>& transaction) {
         std::cout << "Transaction list is full!" << std::endl;
     }
     this->transactionCount++;
+    //std::lock_guard<std::mutex> unlock(mutex);
 }
 
 Budget& Budget::operator=(const Budget& other) {
