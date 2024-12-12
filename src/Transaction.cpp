@@ -4,7 +4,7 @@
 
 Transaction::Transaction(){}
 
-Transaction::Transaction(double amount, const char* type, const char* date, const char* category) {
+Transaction::Transaction(const double& amount, const char* type, const char* date, const char* category) {
     std::cout << "In constructorul clasei Transaction." << std::endl;
     this->amount = amount;
 

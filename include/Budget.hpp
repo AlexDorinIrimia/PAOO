@@ -1,10 +1,10 @@
 #ifndef BUDGET_HPP
 #define BUDGET_HPP
 
-#include "Transaction.hpp"
-#include <vector>
-#include <iostream>
-
+# include "Transaction.hpp"
+# include <vector>
+# include <iostream>
+# include <mutex>
 class Budget {
 private:
     double income;
@@ -12,10 +12,11 @@ private:
     double balance;
     Transaction* transactionList;
     int transactionCount;
+    mutable std::mutex mutex;
 
 public:
 
-    Budget(double income);
+    Budget(const double& income);
     Budget(const Budget& other);
     Budget(Budget&& other) noexcept;
 

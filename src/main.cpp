@@ -1,7 +1,16 @@
 # include "Budget.hpp"
 # include "PersonalBudget.hpp"
+# include <memory>
 
 int main() {
+
+    std::cout << "Tema 3: "<< std::endl;
+    std::unique_ptr<Budget> budget6 = std::make_unique<Budget>(10000);
+
+    std::shared_ptr<Transaction> transaction = std::make_shared<Transaction>(200.0,"Expenses","21.11.2024","Vacation");
+    auto sharedTransaction = transaction; 
+    transaction->printTransactionDetails();
+    sharedTransaction->printTransactionDetails();
    
     std::cout << "Budget1: "<< std::endl;
     Budget budget(1000.0);

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/alex/Tema PAOO/src" -I"/home/alex/Tema PAOO/include"
+CXX_INCLUDES = -I/home/alex/PAOO/src -I/home/alex/PAOO/include
 
-CXX_FLAGS = -std=gnu++17
+CXX_FLAGS = -g -std=gnu++17
 

@@ -1,8 +1,9 @@
 #include "Budget.hpp"
 
+
 #define arrMAX 20
 
-Budget::Budget(double income) {
+Budget::Budget(const double& income) {
     std::cout << "In constructorul clasei Budget." << std::endl;
     this->income = income;
     this->transactionList = new Transaction[arrMAX]; 
@@ -55,8 +56,12 @@ Transaction* Budget::getTransactionList() { return this->transactionList; }
 
 
 void Budget::setIncome(double value) { this->income = value; }
-void Budget::setExpenses(double value) { this->expenses = value; }
-void Budget::setBalance(double value) { this->balance = value; }
+void Budget::setExpenses(double value) { 
+    std::lock_guard<std::mutex> lock(mutex);
+    this->expenses = value; }
+void Budget::setBalance(double value) {
+    std::lock_guard<std::mutex> lock(mutex);
+    this->balance = value; }
 
 void Budget::calculateExpenses() {
     double sum = 0;
@@ -77,6 +82,7 @@ void Budget::calculateBalance() {
 }
 
 void Budget::addTransaction(const Transaction& transaction) {
+    std::lock_guard<std::mutex> lock(mutex);
     if (transactionCount < arrMAX) {
         transactionList[transactionCount++] = transaction;
     } else {

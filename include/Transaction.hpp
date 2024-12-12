@@ -14,7 +14,7 @@ private:
 public:
    
     Transaction();
-    Transaction(double amount, const char* type, const char* date, const char* category);
+    Transaction(const double& amount, const char* type, const char* date, const char* category);
     Transaction(const Transaction& other);
     Transaction(Transaction&& other) noexcept;
 

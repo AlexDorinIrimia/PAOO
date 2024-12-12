@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/alex/PAOO/build",
+  "command": "/usr/bin/c++  -I/home/alex/PAOO/src -I/home/alex/PAOO/include -g -std=gnu++17 -o CMakeFiles/lib.dir/src/PersonalBudget.cpp.o -c /home/alex/PAOO/src/PersonalBudget.cpp",
+  "file": "/home/alex/PAOO/src/PersonalBudget.cpp",
+  "output": "CMakeFiles/lib.dir/src/PersonalBudget.cpp.o"
+},
+{
+  "directory": "/home/alex/PAOO/build",
+  "command": "/usr/bin/c++  -I/home/alex/PAOO/src -I/home/alex/PAOO/include -g -std=gnu++17 -o CMakeFiles/lib.dir/src/Transaction.cpp.o -c /home/alex/PAOO/src/Transaction.cpp",
+  "file": "/home/alex/PAOO/src/Transaction.cpp",
+  "output": "CMakeFiles/lib.dir/src/Transaction.cpp.o"
+},
+{
+  "directory": "/home/alex/PAOO/build",
+  "command": "/usr/bin/c++  -I/home/alex/PAOO/src -I/home/alex/PAOO/include -g -std=gnu++17 -o CMakeFiles/lib.dir/src/Budget.cpp.o -c /home/alex/PAOO/src/Budget.cpp",
+  "file": "/home/alex/PAOO/src/Budget.cpp",
+  "output": "CMakeFiles/lib.dir/src/Budget.cpp.o"
+},
+{
+  "directory": "/home/alex/PAOO/build",
+  "command": "/usr/bin/c++  -I/home/alex/PAOO/src -I/home/alex/PAOO/include -g -std=gnu++17 -o CMakeFiles/budget.dir/src/main.cpp.o -c /home/alex/PAOO/src/main.cpp",
+  "file": "/home/alex/PAOO/src/main.cpp",
+  "output": "CMakeFiles/budget.dir/src/main.cpp.o"
+}
+]
