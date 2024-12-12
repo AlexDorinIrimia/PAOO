@@ -1,4 +1,5 @@
 #include "Budget.hpp"
+#include <string.h>
 
 
 #define arrMAX 20
@@ -6,7 +7,7 @@
 Budget::Budget(const double& income) {
     std::cout << "In constructorul clasei Budget." << std::endl;
     this->income = income;
-    this->transactionList = new Transaction[arrMAX]; 
+    this->transactionList = new std::shared_ptr<Transaction>[arrMAX]; 
     this->expenses = 0;
     this->balance = 0;
     this->transactionCount = 0;
@@ -19,7 +20,7 @@ Budget::Budget(const Budget& other) {
     balance = other.balance;
 
     if (other.transactionList != nullptr && other.transactionCount > 0) {
-        transactionList = new Transaction[arrMAX];
+        transactionList = new std::shared_ptr<Transaction>[arrMAX];
         transactionCount = other.transactionCount;
         for (int i = 0; i < transactionCount; ++i) {
             transactionList[i] = other.transactionList[i];
@@ -49,45 +50,51 @@ Budget::Budget(Budget&& other) noexcept {
 
 
 
-double Budget::getIncome() const { return this->income; }
-double Budget::getExpenses() const { return this->expenses; }
-double Budget::getBalance() const { return this->balance; }
-Transaction* Budget::getTransactionList() { return this->transactionList; }
+double Budget::getIncome() { return this->income; }
+double Budget::getExpenses() { return this->expenses; }
+double Budget::getBalance() { return this->balance; }
+std::shared_ptr<Transaction>* Budget::getTransactionList() { return this->transactionList; }
 
 
 void Budget::setIncome(double value) { this->income = value; }
 void Budget::setExpenses(double value) { 
     std::lock_guard<std::mutex> lock(mutex);
-    this->expenses = value; }
+    expenses = value; }
 void Budget::setBalance(double value) {
     std::lock_guard<std::mutex> lock(mutex);
-    this->balance = value; }
+    balance = value; }
 
 void Budget::calculateExpenses() {
     double sum = 0;
     int i = 0;
    for (int i = 0; i < transactionCount; i++) {
-        if (transactionList[i].getType() == "Expenses") {
-            sum += transactionList[i].getAmount();
+        if (strcmp(transactionList[i]->getType(),"Expenses") == 0) {
+            sum += transactionList[i]->getAmount();
+        }
+        else if(strcmp(transactionList[i]->getType(),"Income") == 0){
+            double sum = 0;
+            sum = getIncome() + transactionList[i]->getAmount();
+            setIncome(sum);
         }
     }
     
-    this->setExpenses(sum);
+    setExpenses(sum);
 }
 
 
 void Budget::calculateBalance() {
     double balance = this->getIncome() - this->getExpenses();
-    this->setBalance(balance);
+    setBalance(balance);
 }
 
-void Budget::addTransaction(const Transaction& transaction) {
+void Budget::addTransaction(const std::shared_ptr<Transaction>& transaction) {
     std::lock_guard<std::mutex> lock(mutex);
     if (transactionCount < arrMAX) {
-        transactionList[transactionCount++] = transaction;
+        transactionList[transactionCount] = transaction;
     } else {
         std::cout << "Transaction list is full!" << std::endl;
     }
+    this->transactionCount++;
 }
 
 Budget& Budget::operator=(const Budget& other) {
@@ -103,7 +110,7 @@ Budget& Budget::operator=(const Budget& other) {
     balance = other.balance;
 
     if (other.transactionList != nullptr && other.transactionCount > 0) {
-        transactionList = new Transaction[arrMAX];
+        transactionList = new std::shared_ptr<Transaction>[arrMAX];
         transactionCount = other.transactionCount;
         for (int i = 0; i < transactionCount; ++i) {
             transactionList[i] = other.transactionList[i];
@@ -123,7 +130,7 @@ void Budget::printBudgetDetails() {
     std::cout << "Expenses: " << this->expenses << std::endl;
     std::cout << "Balance: " << this->balance << std::endl;
     for(int i = 0; i < transactionCount;i++)
-        transactionList[i].printTransactionDetails();
+        transactionList[i]->printTransactionDetails();
 }
 
 Budget::~Budget() {

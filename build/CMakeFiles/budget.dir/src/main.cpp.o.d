@@ -163,10 +163,7 @@ CMakeFiles/budget.dir/src/main.cpp.o: /home/alex/PAOO/src/main.cpp \
  /usr/include/c++/13/limits /usr/include/c++/13/ctime \
  /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/bits/std_mutex.h \
- /usr/include/c++/13/bits/unique_lock.h \
- /home/alex/PAOO/include/PersonalBudget.hpp \
- /home/alex/PAOO/include/PersonalBudget.hpp \
- /home/alex/PAOO/include/Budget.hpp /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/memory \
  /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
  /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
@@ -180,4 +177,7 @@ CMakeFiles/budget.dir/src/main.cpp.o: /home/alex/PAOO/src/main.cpp \
  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
- /usr/include/c++/13/pstl/execution_defs.h
+ /usr/include/c++/13/pstl/execution_defs.h \
+ /home/alex/PAOO/include/PersonalBudget.hpp \
+ /home/alex/PAOO/include/PersonalBudget.hpp \
+ /home/alex/PAOO/include/Budget.hpp

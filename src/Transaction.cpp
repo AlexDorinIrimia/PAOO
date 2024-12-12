@@ -77,7 +77,7 @@ Transaction::~Transaction() {
     delete[] category;
 }
 
-double Transaction::getAmount() const { return amount; }
+double Transaction::getAmount() { return amount; }
 const char* Transaction::getType() const { return type; }
 const char* Transaction::getDate() const { return date; }
 const char* Transaction::getCategory() const { return category; }

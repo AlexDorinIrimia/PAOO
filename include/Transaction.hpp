@@ -19,7 +19,7 @@ public:
     Transaction(Transaction&& other) noexcept;
 
     
-    double getAmount() const;
+    double getAmount();
     const char* getType() const;
     const char* getDate() const;
     const char* getCategory() const;

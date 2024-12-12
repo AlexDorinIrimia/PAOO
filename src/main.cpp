@@ -2,17 +2,25 @@
 # include "PersonalBudget.hpp"
 # include <memory>
 
+
 int main() {
 
     std::cout << "Tema 3: "<< std::endl;
-    std::unique_ptr<Budget> budget6 = std::make_unique<Budget>(10000);
+    std::unique_ptr<Budget> budget6 = std::make_unique<Budget>(10000.0);
+    //std::unique_ptr<Budget> budget7 = budget6;
 
     std::shared_ptr<Transaction> transaction = std::make_shared<Transaction>(200.0,"Expenses","21.11.2024","Vacation");
     auto sharedTransaction = transaction; 
     transaction->printTransactionDetails();
     sharedTransaction->printTransactionDetails();
-   
-    std::cout << "Budget1: "<< std::endl;
+
+    budget6->printBudgetDetails();
+    budget6->addTransaction(sharedTransaction);
+    budget6->calculateExpenses();
+    budget6->calculateBalance();
+    budget6->printBudgetDetails();
+
+    /*std::cout << "Budget1: "<< std::endl;
     Budget budget(1000.0);
 
     
@@ -28,7 +36,7 @@ int main() {
     budget.calculateBalance();
 
     budget.printBudgetDetails();
-
+    
     std::cout << "Budget2: "<< std::endl;
     Budget budget2(2000.0);
     budget2 = budget;
@@ -58,6 +66,6 @@ int main() {
     std::cout << "Budget5: "<< std::endl;
     Budget budget5 = std::move(budget);
     budget5.printBudgetDetails();
-
+    */
     return 0;
 }

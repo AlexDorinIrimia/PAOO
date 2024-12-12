@@ -5,12 +5,13 @@
 # include <vector>
 # include <iostream>
 # include <mutex>
+# include <memory>
 class Budget {
 private:
     double income;
     double expenses;
     double balance;
-    Transaction* transactionList;
+    std::shared_ptr<Transaction>* transactionList;
     int transactionCount;
     mutable std::mutex mutex;
 
@@ -20,10 +21,10 @@ public:
     Budget(const Budget& other);
     Budget(Budget&& other) noexcept;
 
-    double getIncome() const;
-    double getExpenses() const;
-    double getBalance() const;
-    Transaction* getTransactionList();
+    double getIncome();
+    double getExpenses();
+    double getBalance();
+    std::shared_ptr<Transaction>* getTransactionList();
 
     void setIncome(double value);
     void setExpenses(double value);
@@ -31,7 +32,7 @@ public:
 
     void calculateExpenses();
     void calculateBalance();
-    void addTransaction(const Transaction& transaction); 
+    void addTransaction(const std::shared_ptr<Transaction>& transaction); 
     void printBudgetDetails();
 
     Budget& operator=(const Budget& other);
